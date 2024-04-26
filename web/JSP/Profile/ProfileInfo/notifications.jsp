@@ -1,6 +1,4 @@
-<%-- any content can be specified here e.g.: --%>
-<%@ page pageEncoding="UTF-8" %>
-    
+
  <div class="container">
     <div class="notification">
         <div class="header">
@@ -9,8 +7,6 @@
     </div>
      
      <div class="notification-container">
-
-         <jsp:include page="../../jspf/Profile/NotificationMessage.jspf" />
 
      </div>
      
