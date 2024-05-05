@@ -64,7 +64,7 @@ public class AuthServlet extends HttpServlet {
 
     private void showRegisterForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/Signup/Sign_In.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/JSP/Signup/Sign_up.jsp");
         dispatcher.forward(request, response);
 
     }
@@ -117,7 +117,13 @@ public class AuthServlet extends HttpServlet {
                 // User login successful, set session attributes and redirect
                 session.setAttribute("userId", user.getId());
 
-                response.sendRedirect(request.getContextPath() + "/home");
+                session.setAttribute("userName", user.getName());
+                session.setAttribute("userEmail", user.getEmail());
+                session.setAttribute("userPhone", user.getPhone());
+                session.setAttribute("userAddress", user.getAddress());
+                session.setAttribute("profileImage", user.getProfileImage());
+               response.sendRedirect(request.getContextPath() + "/home");
+
 
             } else if (admin != null) {
                 // Admin login successful, set session attributes and redirect
